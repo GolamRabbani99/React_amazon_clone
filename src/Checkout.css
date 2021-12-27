@@ -1,0 +1,23 @@
+
+.checkout{
+    display: flex;
+    
+}
+.checkout_left{
+  
+    margin-left: 10px;
+}
+.checkout_img{
+    width: 100%;
+    border-bottom: 1px solid red;
+ 
+    
+   
+}
+
+
+
+.checkout_right{
+    
+    margin-left: 10px;
+}

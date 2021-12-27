@@ -18,13 +18,14 @@ function Header() {
 
            </div>
              <div className="header_nav">
-                 
+             <Link to="/login">
                  <div className="header_option">
+                 
                      <span className="header_optionlineOne">hello guest</span>
                      <span className="header_optionlineTne">sign in</span>
                     
                  </div>
-
+</Link>
                  <div className="header_option">
                      <span className="header_optionlineOne">return</span>
                      <span className="header_optionlineTne">& order</span>
@@ -36,14 +37,15 @@ function Header() {
                      <span className="header_optionlineTne">prime</span>
                     
                  </div>
-
-                 <div className="header_option_bascate">
                  <Link to="/checkout">
+                 <div className="header_option_bascate">
+                 
 <ShoppingBasketIcon />
 
                      <span className="option_line_count">{basket?.length}</span>
-                     </Link>
+                     
                  </div>
+                 </Link>
              </div>
 
         </div>

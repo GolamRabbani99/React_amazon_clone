@@ -1,38 +1,34 @@
 import {useState,React} from 'react'
 import "./login.css"
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    Redirect,
-    useHistory,
-    useLocation
-  } from "react-router-dom";
+   Link,useNavigate 
+} from "react-router-dom";
+
+  
 import {auth,db} from "./firebase"
 function Login() {
   //taking input value from email and password field
-  const history = useHistory()
+//    const history =useHistory()
+const navigate =useNavigate()
   const[email,setEmail]=useState("")
   const [password,setPassword]=useState("")
 
-  const signIn= e =>{
-      e.preventDefault()
-      console.log("it workds")
-      //some fancy firebase login shit...
-  }
-
-
-
-const signUp = e =>{
+ function signIn(e){
     e.preventDefault()
-    //some fancy firebase login shit
+    console.log("it works")
+ }
+
+
+
+function signUp(e){
+    e.preventDefault()
+    
     auth.createUserWithEmailAndPassword(email,password)
     .then((auth)=> {
         console.log(auth)
-        if(auth){
-            history.push("/")
-        }
+          if(auth){
+            navigate('/');
+          }
     })
     .catch(error =>alert(error.message))
 }

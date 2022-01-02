@@ -15,7 +15,12 @@ const navigate =useNavigate()
 
  function signIn(e){
     e.preventDefault()
-    console.log("it works")
+    auth.signInWithEmailAndPassword(email,password).then((auth)=>{
+        if(auth){
+            navigate("/")
+        }
+    })
+    .catch(error=>alert(error.message))
  }
 
 

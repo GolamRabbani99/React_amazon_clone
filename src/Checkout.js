@@ -5,7 +5,7 @@ import CheckoutItem from "./CheckoutItem"
 import { useStateValue } from "./StateProvider";
 
 function Checkout() {
-   const[{basket},dispatch]=useStateValue()
+   const[{basket,user},dispatch]=useStateValue()
     
     return (
         <div className="checkout">
@@ -13,7 +13,9 @@ function Checkout() {
              <img src="https://www.helium10.com/app/uploads/2018/12/Banner-Amazon-Advertising-Marketing-Guide-01.png" alt="adds banner" className="checkout_img" />
               
               <div>
+              <h3>Hello {user?.email}</h3>
                   <h2 className="checkout_title">Your shopping basket</h2>
+                 
                 {basket.map(item => (
                     <CheckoutItem id={item.id}
 

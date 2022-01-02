@@ -1,5 +1,6 @@
 export const initialState={
     basket:[],
+    user:null
 }
  //selector
  export const totoalItemPrice=(basket)=>
@@ -34,6 +35,12 @@ export const reducer =(state,action)=>{
                 ...state,
                 basket:newBasket
             }
+            case "SET_USER":
+                return {
+                    ...state,
+                    user:action.user
+                }
+            
 
             default:
                 return state
